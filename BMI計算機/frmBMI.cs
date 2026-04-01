@@ -34,6 +34,38 @@ namespace BMI計算機
 
             if (isHeightValid && isWeightValid)
             {
+                // 驗證身高輸入
+                if (isHeightValid)
+                {
+                    if (height <= 0)
+                    {
+                        MessageBox.Show("身高必須大於零。", "身高值錯誤",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("請輸入有效的身高數值。", "身高值錯誤",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                // 驗證體重輸入
+                if (isWeightValid)
+                {
+                    if (weight <= 0)
+                    {
+                        MessageBox.Show("體重必須大於零。", "體重值錯誤",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("請輸入有效的體重數值。", "體重值錯誤",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 height /= 100;
 
                 double bmi = weight / (height * height);
